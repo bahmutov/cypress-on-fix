@@ -8,13 +8,13 @@ module.exports = defineConfig({
     setupNodeEvents(cypressOn, config) {
       const on = require('.')(cypressOn)
       on('after:spec', (a) => {
-        console.log('after spec 1', a)
+        console.log('after spec 1', a.relative)
       })
-      on('after:spec', () => {
-        console.log('after spec 2')
+      on('after:spec', (a) => {
+        console.log('after spec 2', a.relative)
       })
-      on('after:spec', () => {
-        console.log('after spec 3')
+      on('after:spec', (a) => {
+        console.log('after spec 3', a.relative)
       })
     },
   },
