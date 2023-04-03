@@ -1,4 +1,4 @@
-# cypress-on-fix
+# cypress-on-fix ![cypress version](https://img.shields.io/badge/cypress-12.9.0-brightgreen)
 
 > Fixes multiple Cypress plugins subscribing to "on" events
 

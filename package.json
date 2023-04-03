@@ -4,6 +4,7 @@
   "description": "Fixes multiple Cypress plugins subscribing to \"on\" events",
   "main": "index.js",
   "scripts": {
+    "badges": "npx -p dependency-version-badge update-badge cypress",
     "test": "cypress run"
   },
   "repository": {
