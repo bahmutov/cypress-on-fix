@@ -28,6 +28,7 @@ module.exports = defineConfig({
     supportFile: false,
     fixturesFolder: false,
     setupNodeEvents(cypressOn, config) {
+      // https://github.com/bahmutov/cypress-on-fix
       const on = require('cypress-on-fix')(cypressOn)
       // use "on" to register plugins, for example
       // https://github.com/bahmutov/cypress-split
@@ -75,6 +76,7 @@ With this proxy, all listeners are invoked
 
 ```js
 setupNodeEvents(cypressOn, config) {
+  // https://github.com/bahmutov/cypress-on-fix
   const on = require('cypress-on-fix')(cypressOn)
   on('after:spec', (a) => {
     console.log('after spec 1', a.relative)
