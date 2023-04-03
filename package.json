@@ -1,15 +1,16 @@
 {
   "name": "cypress-on-fix",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Fixes multiple Cypress plugins subscribing to \"on\" events",
   "main": "index.js",
   "scripts": {
     "badges": "npx -p dependency-version-badge update-badge cypress",
-    "test": "cypress run"
+    "test": "cypress run",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bahmutov/cypress-on-fix.git"
+    "url": "https://github.com/bahmutov/cypress-on-fix.git"
   },
   "keywords": [
     "cypress-plugin"
@@ -23,6 +24,7 @@
   "devDependencies": {
     "cypress": "^12.9.0",
     "debug": "^4.3.4",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.7",
+    "semantic-release": "^21.0.1"
   }
 }
