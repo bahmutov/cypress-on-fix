@@ -1,0 +1,27 @@
+{
+  "name": "cypress-on-fix",
+  "version": "1.0.0",
+  "description": "Fixes multiple Cypress plugins subscribing to \"on\" events",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/cypress-on-fix.git"
+  },
+  "keywords": [
+    "cypress-plugin"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/cypress-on-fix/issues"
+  },
+  "homepage": "https://github.com/bahmutov/cypress-on-fix#readme",
+  "devDependencies": {
+    "cypress": "^12.9.0",
+    "debug": "^4.3.4",
+    "prettier": "^2.8.7"
+  }
+}
