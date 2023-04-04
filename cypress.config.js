@@ -5,6 +5,7 @@ module.exports = defineConfig({
     // baseUrl, etc
     supportFile: false,
     fixturesFolder: false,
+    video: false,
     setupNodeEvents(cypressOn, config) {
       const on = require('.')(cypressOn)
       on('before:browser:launch', (browser, launchOptions) => {
@@ -15,7 +16,12 @@ module.exports = defineConfig({
       })
 
       on('after:spec', (a) => {
-        console.log('after spec 1', a.relative)
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log('after spec 1', a.relative)
+            resolve()
+          }, 100)
+        })
       })
       on('after:spec', (a) => {
         console.log('after spec 2', a.relative)

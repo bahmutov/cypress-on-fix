@@ -20,16 +20,17 @@ function onProxy(on) {
     } else {
       debug('the only listener so far')
       listeners[eventName] = [callback]
-      on(eventName, function () {
+      on(eventName, async function () {
         debug(
           'proxy %s to %d listeners',
           eventName,
           listeners[eventName].length,
         )
         let result
-        listeners[eventName].forEach((fn) => {
-          result = fn.apply(null, arguments)
-        })
+        // support async callbacks
+        for (let fn of listeners[eventName]) {
+          result = await fn.apply(null, arguments)
+        }
         // return the last result
         return result
       })
