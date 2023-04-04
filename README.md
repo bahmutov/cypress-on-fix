@@ -42,6 +42,26 @@ module.exports = defineConfig({
 })
 ```
 
+If there are multiple plugins that returns a value, the last one result will be returned
+
+```js
+const on = require('cypress-on-fix')(cypressOn)
+on('before:browser:launch', (browser, launchOptions) => {
+  if (browser.name === 'chrome') {
+    launchOptions.args.push('--window-size=1366,768')
+    return launchOptions
+  }
+})
+on('before:browser:launch', (browser, launchOptions) => {
+  if (browser.name === 'chrome') {
+    launchOptions.args.push('--window-size=1280,720')
+    return launchOptions
+  }
+})
+```
+
+In the situation above, the Chrome browser will be opened with the window size 1280x720
+
 ## Debugging
 
 This module uses [debug](https://github.com/debug-js/debug#readme) to print verbose log messages. Run Cypress with
