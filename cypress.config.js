@@ -7,6 +7,13 @@ module.exports = defineConfig({
     fixturesFolder: false,
     setupNodeEvents(cypressOn, config) {
       const on = require('.')(cypressOn)
+      on('before:browser:launch', (browser, launchOptions) => {
+        if (browser.name === 'chrome') {
+          launchOptions.args.push('--window-size=1366,768')
+          return launchOptions
+        }
+      })
+
       on('after:spec', (a) => {
         console.log('after spec 1', a.relative)
       })

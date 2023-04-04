@@ -26,9 +26,12 @@ function onProxy(on) {
           eventName,
           listeners[eventName].length,
         )
+        let result
         listeners[eventName].forEach((fn) => {
-          fn.apply(null, arguments)
+          result = fn.apply(null, arguments)
         })
+        // return the last result
+        return result
       })
     }
   }
