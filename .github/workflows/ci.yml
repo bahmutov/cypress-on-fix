@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run Cypress tests 🧪
         # https://github.com/cypress-io/github-action
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
 
   release:
     needs: [test]
@@ -21,13 +21,13 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install only the semantic release 📦
         run: npm install semantic-release
 
       - name: Semantic Release 🚀
-        uses: cycjimmy/semantic-release-action@v3
+        uses: cycjimmy/semantic-release-action@v4
         with:
           branch: main
         env:
