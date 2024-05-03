@@ -8,6 +8,7 @@ module.exports = defineConfig({
     video: false,
     setupNodeEvents(cypressOn, config) {
       const on = require('.')(cypressOn)
+
       on('before:browser:launch', (browser, launchOptions) => {
         if (browser.name === 'chrome') {
           launchOptions.args.push('--window-size=1366,768')
@@ -28,6 +29,10 @@ module.exports = defineConfig({
       })
       on('after:spec', (a) => {
         console.log('after spec 3', a.relative)
+      })
+
+      on('after:run', async () => {
+        console.log('after run async callback')
       })
     },
   },

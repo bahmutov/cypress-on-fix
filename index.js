@@ -30,6 +30,11 @@ function onProxy(on) {
         // support async callbacks
         for (let fn of listeners[eventName]) {
           result = await fn.apply(null, arguments)
+          debug(
+            'event %s, applied callback %s',
+            eventName,
+            fn.name || 'anonymous',
+          )
         }
         // return the last result
         return result
