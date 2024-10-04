@@ -21,10 +21,17 @@
     "url": "https://github.com/bahmutov/cypress-on-fix/issues"
   },
   "homepage": "https://github.com/bahmutov/cypress-on-fix#readme",
+  "dependencies": {
+    "debug": "^4.3.7"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "devDependencies": {
     "cypress": "^13.8.1",
-    "debug": "^4.3.4",
     "prettier": "^3.2.5",
     "semantic-release": "^21.0.1"
-  }
+  },
+  "types": "index.d.ts"
 }
