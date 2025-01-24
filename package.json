@@ -29,9 +29,9 @@
     "index.d.ts"
   ],
   "devDependencies": {
-    "cypress": "^13.8.1",
+    "cypress": "^13.17.0",
     "prettier": "^3.2.5",
-    "semantic-release": "^21.0.1"
+    "semantic-release": "^24.2.1"
   },
   "types": "index.d.ts"
 }
